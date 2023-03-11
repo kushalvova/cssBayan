@@ -36,18 +36,98 @@
   } 
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: calc(1vw + 0.9em);
 }
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-  
+* {
+  box-sizing: inherit;
+}  
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: 'Comic Neue';
-    font-weight: 700;
-    font-size: 18px; 
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: 'Comic Neue';
+}
+h1 {
+  font-size: 1.5em;  
+  font-weight: 700;
+  border-bottom: 0.1rem solid black;
+}
+a {
+  text-decoration: none;
+}
+.accardeon__wrapper {
+  width: 100%;
+  max-width: 17rem;
+  margin: 1.5rem;
+}
+
+.accardeon__item {width: 100%;}
+
+label {cursor: pointer;}
+
+#first, #second, #third, #fourth, #fifth, #sixth {display: none;}
+
+.accardeon__item__title {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.icon {
+  height: 0.9rem;
+  width: 0.9rem;
+  background-image: url('../assets/img/plus-solid.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: .2s;
+}
+
+.accardeon__item__content {
+  display: block;
+  height: 0;
+  width: 100%;
+  transition: height .5s;
+}
+#first:checked ~ label > .icon,
+#second:checked ~ label > .icon,
+#third:checked ~ label > .icon,
+#fourth:checked ~ label > .icon,
+#fifth:checked ~ label > .icon,
+#sixth:checked ~ label > .icon {
+  height: 1rem;
+  width: 1rem;
+  background-image: url('../assets/img/xmark-solid.svg');
+  transition: .2s;
+}
+#first:checked ~ .accardeon__item__content,
+#second:checked ~ .accardeon__item__content,
+#third:checked ~ .accardeon__item__content,
+#fourth:checked ~ .accardeon__item__content,
+#fifth:checked ~ .accardeon__item__content,
+#sixth:checked ~ .accardeon__item__content {  
+  height: 10rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#first:checked ~ .accardeon__item__content {
+  background-image: url('../assets/img/first-mem.jpg');
+}
+#second:checked ~ .accardeon__item__content {
+  background-image: url('../assets/img/second-mem.jpg');
+}
+#third:checked ~ .accardeon__item__content {
+  background-image: url('../assets/img/third-mem.jpg');
+}
+#fourth:checked ~ .accardeon__item__content {
+  background-image: url('../assets/img/fourth-mem.jpg');
+}
+#fifth:checked ~ .accardeon__item__content {
+  background-image: url('../assets/img/fifth-mem.jpg');
+}
+#sixth:checked ~ .accardeon__item__content {  
+  background-image: url('../assets/img/sixth-mem.jpg');
+}
