@@ -20,7 +20,6 @@
 html {
   box-sizing: border-box;
   font-size: calc(1vw + 0.9em);
-  color: rgb(82, 82, 82);
 }
 * {
   box-sizing: inherit;
@@ -101,30 +100,17 @@ footer > p > span {
   width: 100%;
   padding: 0.3rem;
   background-color:rgb(255, 217, 160);
+  color: rgb(153, 74, 74);
 }
 .icon {
   height: 0.8rem;
-  width: 0.8rem;
-  background-image: url('../assets/img/chevron-down-solid.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: .2s;
+  width: 0rem;
 }
 .accardeon__item__content {
   display: block;
   height: 0;
   width: 100%;
   transition: height .5s;
-}
-#first:checked ~ label > .icon,
-#second:checked ~ label > .icon,
-#third:checked ~ label > .icon,
-#fourth:checked ~ label > .icon,
-#fifth:checked ~ label > .icon,
-#sixth:checked ~ label > .icon {
-  background-image: url('../assets/img/chevron-up-solid.svg');
-  transition: .2s;
 }
 #first:checked ~ .accardeon__item__content,
 #second:checked ~ .accardeon__item__content,
@@ -136,6 +122,14 @@ footer > p > span {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+#first:checked ~ .accardeon__item__title,
+#second:checked ~ .accardeon__item__title,
+#third:checked ~ .accardeon__item__title,
+#fourth:checked ~ .accardeon__item__title,
+#fifth:checked ~ .accardeon__item__title,
+#sixth:checked ~ .accardeon__item__title {  
+  color: rgb(82, 82, 82);
 }
 #first:checked ~ .accardeon__item__content {
   background-image: url('../assets/img/first-mem.jpg');
@@ -155,3 +149,23 @@ footer > p > span {
 #sixth:checked ~ .accardeon__item__content {  
   background-image: url('../assets/img/sixth-mem.jpg');
 }
+
+
+
+/* .icon {
+  width: 0.8rem;
+  background-image: url('../assets/img/chevron-down-solid.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: .2s;
+}
+#first:checked ~ label > .icon,
+#second:checked ~ label > .icon,
+#third:checked ~ label > .icon,
+#fourth:checked ~ label > .icon,
+#fifth:checked ~ label > .icon,
+#sixth:checked ~ label > .icon {
+  background-image: url('../assets/img/chevron-up-solid.svg');
+  transition: .2s;
+} */
