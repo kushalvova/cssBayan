@@ -28,36 +28,73 @@ html {
 }  
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
+  min-height: 100vh;
   background-color:rgb(255, 242, 222);
   font-family: 'Coustard';
 }
-h1 {
-  margin: 1rem auto;
-  font-size: 1.5em;  
-  font-weight: 900;
-  border-bottom: 0.1rem solid rgb(82, 82, 82);
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-a {
-  text-decoration: none;
+header, footer {
+  height: 3.5rem;
+  width: 100%;
+  background-image: url('../assets/img/galaxy.jpg');
+  background-size: cover;
+  background-position: center;
 }
+label {cursor: pointer;}
+.project-logo {
+  height: 1.7rem;
+  margin: auto 7vw;
+  background-image:  url('../assets/img/css-bayan.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  border-bottom: 0.1rem solid rgb(255, 206, 120);
+}
+footer {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  padding-right: 7vw;
+  padding-left: 7vw;
+}
+footer > p {
+  display: flex;
+  align-items: center;
+  height: 1.8rem;
+}
+.github-link, .rss-link {
+  height: 1.8rem;
+  background-size: contain;
+}
+.github-link:hover,
+.rss-link:hover {
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+footer > p > span {
+  margin-left: 4vw;
+  color: rgb(255, 206, 120);  
+}
+
+/*!-- Accardeon --*/
+
 .accardeon__wrapper {
   width: 100%;
   max-width: 17rem;
   margin: 1.5rem;
 }
-
 .accardeon__item {
   width: 100%;
   margin-bottom: 0.2rem;
 }
-
-label {cursor: pointer;}
-
 #first, #second, #third, #fourth, #fifth, #sixth {display: none;}
-
 .accardeon__item__title {
   display: inline-flex;
   justify-content: space-between;
@@ -65,7 +102,6 @@ label {cursor: pointer;}
   padding: 0.3rem;
   background-color:rgb(255, 217, 160);
 }
-
 .icon {
   height: 0.8rem;
   width: 0.8rem;
@@ -75,7 +111,6 @@ label {cursor: pointer;}
   background-position: center;
   transition: .2s;
 }
-
 .accardeon__item__content {
   display: block;
   height: 0;
