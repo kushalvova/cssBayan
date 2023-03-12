@@ -1,58 +1,44 @@
-/* comic-neue-regular - latin */
+/* coustard-regular - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Comic Neue';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../assets/fonts/comic-neue-v8-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-         url('../assets/fonts/comic-neue-v8-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-/* comic-neue-italic - latin */
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Coustard';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/coustard-v16-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../assets/fonts/coustard-v16-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* coustard-900 - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Comic Neue';
-    font-style: italic;
-    font-weight: 400;
-    src: url('../assets/fonts/comic-neue-v8-latin-italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-         url('../assets/fonts/comic-neue-v8-latin-italic.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-/* comic-neue-700 - latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Comic Neue';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../assets/fonts/comic-neue-v8-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-         url('../assets/fonts/comic-neue-v8-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }  
-/* comic-neue-700italic - latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Comic Neue';
-    font-style: italic;
-    font-weight: 700;
-    src: url('../assets/fonts/comic-neue-v8-latin-700italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-         url('../assets/fonts/comic-neue-v8-latin-700italic.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  } 
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Coustard';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../assets/fonts/coustard-v16-latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../assets/fonts/coustard-v16-latin-900.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
 html {
   box-sizing: border-box;
   font-size: calc(1vw + 0.9em);
+  color: rgb(82, 82, 82);
 }
 * {
   box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }  
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  font-family: 'Comic Neue';
+  background-color:rgb(255, 242, 222);
+  font-family: 'Coustard';
 }
 h1 {
+  margin: 1rem auto;
   font-size: 1.5em;  
-  font-weight: 700;
-  border-bottom: 0.1rem solid black;
+  font-weight: 900;
+  border-bottom: 0.1rem solid rgb(82, 82, 82);
 }
 a {
   text-decoration: none;
@@ -63,22 +49,27 @@ a {
   margin: 1.5rem;
 }
 
-.accardeon__item {width: 100%;}
+.accardeon__item {
+  width: 100%;
+  margin-bottom: 0.2rem;
+}
 
 label {cursor: pointer;}
 
 #first, #second, #third, #fourth, #fifth, #sixth {display: none;}
 
 .accardeon__item__title {
-  width: 100%;
   display: inline-flex;
   justify-content: space-between;
+  width: 100%;
+  padding: 0.3rem;
+  background-color:rgb(255, 217, 160);
 }
 
 .icon {
-  height: 0.9rem;
-  width: 0.9rem;
-  background-image: url('../assets/img/plus-solid.svg');
+  height: 0.8rem;
+  width: 0.8rem;
+  background-image: url('../assets/img/chevron-down-solid.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -97,9 +88,7 @@ label {cursor: pointer;}
 #fourth:checked ~ label > .icon,
 #fifth:checked ~ label > .icon,
 #sixth:checked ~ label > .icon {
-  height: 1rem;
-  width: 1rem;
-  background-image: url('../assets/img/xmark-solid.svg');
+  background-image: url('../assets/img/chevron-up-solid.svg');
   transition: .2s;
 }
 #first:checked ~ .accardeon__item__content,
